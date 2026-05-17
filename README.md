@@ -6,6 +6,8 @@
 4. It is intended for home lab use.
 5. The external network used is 10.10.10.0/24 and can be changed.
 6. Once up and running external hosts such as SevOne can poll the devices.
+7. Devices can be reached via a management vrf using for example $ netlab connect r1, allowing full use of cli commands and customization of the running config (not persisent via restart).
+8. Lab is configured with OSPF, BGP, IPFIX, IPSLA, QoS and SNMP.
    
 
 `Toplogy`
