@@ -21,7 +21,8 @@
                                                     (via ens160)
 ```
 
-# Expose hardware-assisted virtualization to the guest OS
+
+Expose hardware-assisted virtualization to the guest OS
 
 
 cd ~
@@ -45,7 +46,7 @@ netlab install ubuntu containerlab libvirt ansible
 
 netlab test clab
 
-# SUCCESS clab is installed and working correctly
+SUCCESS clab is installed and working correctly
 
 
 cd
@@ -54,18 +55,18 @@ make docker-image
 
 docker images
 
-# vrnetlab/cisco_iol:17.16.01a
+vrnetlab/cisco_iol:17.16.01a
 
 netlab connect r5
 Connecting to 192.168.200.105 using SSH port 22
 
 
 
-r5#ping 10.0.0.1
+'r5#ping 10.0.0.1
 Type escape sequence to abort.
 Sending 5, 100-byte ICMP Echos to 10.0.0.1, timeout is 2 seconds:
 !!!!!
-Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/1 ms
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/1 ms'
 
 
 unxz 
