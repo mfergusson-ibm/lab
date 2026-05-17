@@ -39,10 +39,10 @@ netlab install ubuntu containerlab libvirt ansible
 (answer (y)es to questions)
 
 # Test
-# libvirt is Not used in lab below
-# this will download a bento/ubuntu image and can take time to do
-# provided here for completeness 
-#netlab test libvirt 
+libvirt is Not used in lab below
+this will download a bento/ubuntu image and can take time to do
+provided here for completeness 
+netlab test libvirt 
 
 netlab test clab
 
@@ -62,11 +62,11 @@ Connecting to 192.168.200.105 using SSH port 22
 
 
 
-'r5#ping 10.0.0.1
+`r5#ping 10.0.0.1
 Type escape sequence to abort.
 Sending 5, 100-byte ICMP Echos to 10.0.0.1, timeout is 2 seconds:
 !!!!!
-Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/1 ms'
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/1 ms`
 
 
 unxz 
