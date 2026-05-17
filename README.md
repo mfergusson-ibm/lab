@@ -21,3 +21,53 @@
                                                     (via ens160)
 ```
 
+# Expose hardware-assisted virtualization to the guest OS
+
+
+cd ~
+sudo apt-get update
+sudo python3 -m venv --system-site-packages lab
+source lab/bin/activate
+echo "source lab/bin/activate" >> ~/.bashrc
+pip3 install networklab
+
+exit
+
+netlab install ubuntu containerlab libvirt ansible
+
+(answer (y)es to questions)
+
+# Test
+# libvirt is Not used in lab below
+# this will download a bento/ubuntu image and can take time to do
+# provided here for completeness 
+#netlab test libvirt 
+
+netlab test clab
+
+# SUCCESS clab is installed and working correctly
+
+
+cd
+
+make docker-image
+
+docker images
+
+# vrnetlab/cisco_iol:17.16.01a
+
+netlab connect r5
+Connecting to 192.168.200.105 using SSH port 22
+
+
+
+r5#ping 10.0.0.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.0.0.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/1 ms
+
+
+unxz 
+
+docker image import cEOS-lab-4.36.0F.tar ceos:4.36.0F
