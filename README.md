@@ -1,5 +1,14 @@
 # lab
 
+1. This is a simulated network that is based on Netlab and Containerlab.
+2. The instructions and config are for an Ubuntu standalone or VM server.
+3. The router images are available via the Box link below.
+4. It is intended for home lab use.
+5. The external network used is 10.10.10.0/24 and can be changed.
+6. Once up and running external hosts such as SevOne can poll the devices.
+   
+
+`Toplogy`
 
 ```
                                 
@@ -21,10 +30,13 @@
                                                     (via ens160)
 ```
 
+Instructions
 
-Expose hardware-assisted virtualization to the guest OS
+1. Expose hardware-assisted virtualization to the guest OS
 
-
+2. Seup Environment
+   
+```
 cd ~
 sudo apt-get update
 sudo python3 -m venv --system-site-packages lab
@@ -34,6 +46,10 @@ pip3 install networklab
 
 exit
 
+```
+3. Install Netlab
+
+```
 netlab install ubuntu containerlab libvirt ansible
 
 (answer (y)es to questions)
@@ -48,7 +64,11 @@ netlab test clab
 
 SUCCESS clab is installed and working correctly
 
+```
 
+4. Create Cisco CM docker images
+
+```
 cd
 
 make docker-image
@@ -57,12 +77,14 @@ docker images
 
 vrnetlab/cisco_iol:17.16.01a
 
+```
+
 netlab connect r5
 Connecting to 192.168.200.105 using SSH port 22
 
 
 
-`r5#ping 10.0.0.1
+r5#ping 10.0.0.1
 Type escape sequence to abort.
 Sending 5, 100-byte ICMP Echos to 10.0.0.1, timeout is 2 seconds:
 !!!!!
@@ -74,3 +96,5 @@ unxz
 docker image import cEOS-lab-4.36.0F.tar ceos:4.36.0F
 
 https://ibm.box.com/s/5hnqi0d0h8h60mexbl84bza4hk7qhaec
+
+
