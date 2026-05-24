@@ -50,12 +50,11 @@ sudo python3 -m venv --system-site-packages .venv
 source ~/.venv/bin/activate
 echo "source ~/.venv/bin/activate" >> ~/.bashrc
 pip3 install networklab
-echo "Exiting to apply, re-login"
-sleep 5
-exit
 
 ```
-3. Install Netlab
+3. Exit & re-login
+   
+4. Install Netlab
 
 ```
 netlab install ubuntu containerlab libvirt ansible
@@ -74,7 +73,7 @@ SUCCESS clab is installed and working correctly
 
 ```
 
-4. Create Cisco CM docker images
+5. Create Cisco CM docker images
 
 ```
 cd
