@@ -41,9 +41,9 @@ Instructions
 ```
 cd ~
 sudo apt-get update
-sudo python3 -m venv --system-site-packages lab
-source lab/bin/activate
-echo "source lab/bin/activate" >> ~/.bashrc
+sudo python3 -m venv --system-site-packages .venv
+source ~/.venv/bin/activate
+echo "source ~/.venv/bin/activate" >> ~/.bashrc
 pip3 install networklab
 
 exit
