@@ -34,9 +34,14 @@
 
 Instructions
 
-1. Expose hardware-assisted virtualization to the guest OS
 
-2. Seup Environment
+
+1. Install Ubuntu
+    
+   - For VMware "Expose hardware-assisted virtualization to the guest OS"
+   - Test on "Ubuntu 24.04.4 LTS (GNU/Linux 6.8.0-117-generic x86_64)"
+
+4. Seup Environment
    
 ```
 cd ~
