@@ -45,7 +45,8 @@ sudo python3 -m venv --system-site-packages .venv
 source ~/.venv/bin/activate
 echo "source ~/.venv/bin/activate" >> ~/.bashrc
 pip3 install networklab
-
+echo "Exiting to apply, re-login"
+sleep 5
 exit
 
 ```
