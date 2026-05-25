@@ -1,0 +1,80 @@
+! ####################################################################
+! 1. IP SLA CONFIGURATION
+! ####################################################################
+ip sla 10
+ udp-jitter 10.0.0.1 16384 source-ip 10.0.0.5 codec g711ulaw
+  tos 184
+  frequency 30
+ip sla schedule 10 life forever start-time now
+
+! ####################################################################
+! 2. ACCESS CONTROL LISTS (ACLs)
+! ####################################################################
+ip access-list extended ACL_SNMP
+ permit udp any any eq snmp
+ permit udp any any eq snmptrap
+exit
+
+ip access-list extended ACL_IPSLA
+ permit udp host 10.0.0.5 host 10.0.0.1 eq 16384
+exit
+
+! ####################################################################
+! 3. CLASS MAPS (CLASSIFICATION)
+! ####################################################################
+class-map match-any CM_VOICE
+ match protocol rtp audio
+ match ip dscp ef
+exit
+
+class-map match-any CM_IPSLA
+ match access-group name ACL_IPSLA
+ match ip dscp ef
+exit
+
+class-map match-any CM_MANAGEMENT
+ match access-group name ACL_SNMP
+ match protocol ssh
+ match protocol telnet
+exit
+
+! ####################################################################
+! 4. POLICY MAPS (MARKING & QUEUING)
+! ####################################################################
+! --- Ingress Marking Policy ---
+policy-map PM_INGRESS_MARKING
+ class CM_VOICE
+  set ip dscp ef
+ class CM_IPSLA
+  set ip dscp ef
+ class CM_MANAGEMENT
+  set ip dscp cs2
+ class class-default
+  set ip dscp default
+exit
+
+! --- Egress Queuing Policy ---
+policy-map PM_EGRESS_QUEUING
+ class CM_VOICE
+  priority percent 30
+ class CM_IPSLA
+  bandwidth percent 5
+ class CM_MANAGEMENT
+  bandwidth percent 5
+ class class-default
+  fair-queue
+exit
+
+! ####################################################################
+! 5. INTERFACE APPLICATION
+! ####################################################################
+interface GigabitEthernet0/1
+ description --- LAN Interface (Traffic Ingress) ---
+ service-policy input PM_INGRESS_MARKING
+exit
+
+interface GigabitEthernet0/0
+ description --- WAN Interface (Traffic Egress) ---
+ service-policy output PM_EGRESS_QUEUING
+exit
+

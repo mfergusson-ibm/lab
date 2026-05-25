@@ -1,0 +1,25 @@
+!
+! IP SLA Keepalive Configuration
+! Maintains ARP entries for external management hosts
+! This allows external hosts to reach router loopbacks without manual ping
+!
+{% set external_hosts = ['10.10.10.53'] %}
+{% for host in external_hosts %}
+ip sla {{ loop.index }}
+ icmp-echo {{ host }} source-interface Loopback0
+ frequency 30
+ timeout 5000
+ threshold 3000
+!
+ip sla schedule {{ loop.index }} life forever start-time now
+!
+{% endfor %}
+!
+! Optional: Track reachability for monitoring
+{% for host in external_hosts %}
+track {{ loop.index }} ip sla {{ loop.index }} reachability
+!
+{% endfor %}
+!
+! End of IP SLA Keepalive Configuration
+!
