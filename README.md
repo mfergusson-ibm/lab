@@ -46,6 +46,7 @@ Instructions
 ```
 cd ~
 sudo apt-get update
+sudo apt-get install -y python3-pip python3-venv
 sudo python3 -m venv --system-site-packages .venv
 source ~/.venv/bin/activate
 echo "source ~/.venv/bin/activate" >> ~/.bashrc
