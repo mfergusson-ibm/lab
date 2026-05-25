@@ -41,40 +41,52 @@ Instructions
    - For VMware "Expose hardware-assisted virtualization to the guest OS"
    - Test on "Ubuntu 24.04.4 LTS (GNU/Linux 6.8.0-117-generic x86_64)"
 
-4. Seup Environment
+2. Seup Environment
    
 ```
 cd ~
 sudo apt-get update
 sudo apt-get install -y python3-pip python3-venv
-sudo python3 -m venv --system-site-packages .venv
+python3 -m venv --system-site-packages .venv
 source ~/.venv/bin/activate
 echo "source ~/.venv/bin/activate" >> ~/.bashrc
+
+```
+
+3. Install Netlab
+
+```
 pip3 install networklab
 
 ```
-3. Exit & re-login
+
+4. Exit & re-login
    
-4. Install Netlab
+5. Install Netlab Packages
 
 ```
 netlab install ubuntu containerlab libvirt ansible
 
+```
 (answer (y)es to questions)
 
 # Test
-libvirt is Not used in lab below
-this will download a bento/ubuntu image and can take time to do
+Note that libvirt is Not used in lab below.
+This will download a bento/ubuntu image and can take time to do
 provided here for completeness 
 netlab test libvirt 
 
+```
+
 netlab test clab
+
+```
 
 SUCCESS clab is installed and working correctly
 
 ```
 
-5. Create Cisco CM docker images
+6. Create Cisco CM docker images
 
 ```
 cd
