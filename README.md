@@ -2,7 +2,7 @@
 
 1. This is a simulated network that is based on Netlab and Containerlab.
 2. The instructions and config are for an Ubuntu standalone or VM server.
-3. The router images are available via the Box link below.
+3. The router images are available via the Box link below. Note the license restrictions.
 4. It is intended for home lab use.
 5. The external network used is 10.10.10.0/24 and can be changed.
 6. Once up and running external hosts such as SevOne can poll the devices.
@@ -68,7 +68,22 @@ pip3 install networklab
 netlab install ubuntu containerlab libvirt ansible
 
 ```
-(answer (y)es to questions)
+answer (y)es to questions
+
+6. Validate Docker
+
+```
+groups
+```
+
+If user not part of docker and clab_admins
+
+```
+sudo usermod -aG docker,clab_admins $USER
+newgroup docker
+
+```
+
 
 # Test
 Note that libvirt is Not used in lab below.
@@ -86,10 +101,33 @@ SUCCESS clab is installed and working correctly
 
 ```
 
-6. Create Cisco CM docker images
+6. Create Directory for labs
 
 ```
-cd
+mkdir ~/labs
+
+```
+
+7. Clone srl-labs/vrnetlab
+
+```
+cd ~/labs && git clone https://github.com/srl-labs/vrnetlab
+
+```
+
+8. Copy CML images
+
+Download from box and copy to containerlab 
+
+```
+cp cisco_iol-17.16.01a.bin ~/labs/vrnetlab/cisco/iol
+
+```
+
+9. Create Cisco IOL docker images
+
+```
+cd ~/labs/vrnetlab/cisco/iol
 
 make docker-image
 
