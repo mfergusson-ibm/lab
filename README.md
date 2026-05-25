@@ -32,7 +32,7 @@
                                                     (via ens160)
 ```
 
-Instructions
+# Install
 
 
 
@@ -99,32 +99,33 @@ netlab test clab
 
 SUCCESS clab is installed and working correctly
 
-```
 
-6. Create Directory for labs
+# Lab Setup
+
+1. Create Directory for labs
 
 ```
 mkdir ~/labs
 
 ```
 
-7. Clone srl-labs/vrnetlab
+2. Clone srl-labs/vrnetlab
 
 ```
 cd ~/labs && git clone https://github.com/srl-labs/vrnetlab
 
 ```
 
-8. Copy CML images
+3. Copy CML images
 
-Download from box and copy to containerlab 
+Download from box link below and copy to containerlab 
 
 ```
 cp cisco_iol-17.16.01a.bin ~/labs/vrnetlab/cisco/iol
 
 ```
 
-9. Create Cisco IOL docker images
+4. Create Cisco IOL docker images
 
 ```
 cd ~/labs/vrnetlab/cisco/iol
@@ -133,9 +134,13 @@ make docker-image
 
 docker images
 
+```
 vrnetlab/cisco_iol:17.16.01a
 
-```
+
+5. Copy lab files
+
+
 
 netlab connect r5
 Connecting to 192.168.200.105 using SSH port 22
