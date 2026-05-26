@@ -24,7 +24,6 @@ nodes:
       - apk add net-snmp net-snmp-tools frr-snmp
       - chmod +x /usr/local/bin/setup-snmp.sh
       - /usr/local/bin/setup-snmp.sh || true
-    config: [ snmp-frr.j2 ]
 
   - name: r2
     module: [ ospf, bgp, routing ]
@@ -41,7 +40,6 @@ nodes:
       - apk add net-snmp net-snmp-tools frr-snmp
       - chmod +x /usr/local/bin/setup-snmp.sh
       - /usr/local/bin/setup-snmp.sh || true
-    config: [ snmp-frr.j2 ]
 
   - name: r3
     module: [ ospf, bgp, routing ]
@@ -58,7 +56,6 @@ nodes:
       - apk add net-snmp net-snmp-tools frr-snmp
       - chmod +x /usr/local/bin/setup-snmp.sh
       - /usr/local/bin/setup-snmp.sh || true
-    config: [ snmp-frr.j2 ]
 
   - name: r4
     module: [ bgp ]
@@ -70,7 +67,6 @@ nodes:
       - apk add net-snmp net-snmp-tools frr-snmp
       - chmod +x /usr/local/bin/setup-snmp.sh
       - /usr/local/bin/setup-snmp.sh || true
-    config: [ snmp-frr.j2 ]
 
   - name: r5
     module: [ ospf, bgp, routing ]
@@ -85,7 +81,6 @@ nodes:
       - apk add net-snmp net-snmp-tools frr-snmp
       - chmod +x /usr/local/bin/setup-snmp.sh
       - /usr/local/bin/setup-snmp.sh || true
-    config: [ snmp-frr.j2 ]
 
   - name: r6
     module: [ ospf, bgp ]
@@ -96,7 +91,6 @@ nodes:
       - apk add net-snmp net-snmp-tools frr-snmp
       - chmod +x /usr/local/bin/setup-snmp.sh
       - /usr/local/bin/setup-snmp.sh || true
-    config: [ snmp-frr.j2 ]
 
   - name: r99
     module: [ ospf, routing ]
@@ -111,7 +105,6 @@ nodes:
       - apk add net-snmp net-snmp-tools frr-snmp
       - chmod +x /usr/local/bin/setup-snmp.sh
       - /usr/local/bin/setup-snmp.sh || true
-    config: [ snmp-frr.j2 ]
 
   - name: h1
     device: linux
