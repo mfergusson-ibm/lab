@@ -1,6 +1,6 @@
 # lab
 
-Simulated network (Lab01) that is based on Netlab and Containerlab for running in a home lab and providing a SevOne discoverable network that can be spun up in minutes. Requires reletively low cpu and memory.
+Simulated network (Lab01) that is based on Netlab and Containerlab for running in a home lab and providing a SevOne discoverable network that can be spun up in minutes. Requires reletively low cpu and memory. 7 routers are started and 1 linux hosts.
 
 
 1. The instructions and config are for an Ubuntu standalone or VM server.
@@ -89,7 +89,6 @@ newgroup docker
 
 ```
 
-
 # Test
 Note that libvirt is Not used in lab below.
 This will download a bento/ubuntu image and can take time to do
@@ -107,33 +106,64 @@ SUCCESS clab is installed and working correctly
 
 # Lab Setup
 
-1. Create Directory for labs
+1. Clone or download directory from Github. Change to desired directory. For purposes here assumed to be user home directory.
 
 ```
-mkdir ~/labs
+cd ~
+git clone git@github.com:mfergusson-ibm/lab.git
 
 ```
 
-2. Copy lab files
+2. Navigate to lab
 
+```
+cd ~/lab/labs/lab01
 
+```
+
+3. Modify 
+
+Edit the topology.yml file. 
+
+Modify the section changing the 10.10.10.0/24 and 10.10.10.99/24
+The 10.10.10.99/24 is what the route will be from SevOne on the same subnet
+
+  - name: r5
+    bgp.advertise: [ 10.10.10.0/24 ]
+
+and
+
+links:
+  - r99:
+      ipv4: 10.10.10.99/24
+    clab:
+      uplink: ens160
+
+ens160 must be the interface of the Ubuntu server whose network is same as the SevOne subnet.
+
+4. Start Lab
+
+```
+netlab up
+
+```
+
+5. Test within Netlab
 
 netlab connect r5
-Connecting to 192.168.200.105 using SSH port 22
+Connecting to container clab-lab011-r5, starting bash
+
+Use vtysh to connect to FRR daemon
+
+r5(bash)# ping -I 10.0.0.5 10.0.0.1
+PING 10.0.0.1 (10.0.0.1) from 10.0.0.5: 56 data bytes
+64 bytes from 10.0.0.1: seq=0 ttl=62 time=0.368 ms
+64 bytes from 10.0.0.1: seq=1 ttl=62 time=0.232 ms
+
+
+6. Test from SevOne
 
 
 
-r5#ping 10.0.0.1
-Type escape sequence to abort.
-Sending 5, 100-byte ICMP Echos to 10.0.0.1, timeout is 2 seconds:
-!!!!!
-Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/1 ms`
-
-
-unxz 
-
-docker image import cEOS-lab-4.36.0F.tar ceos:4.36.0F
-
-https://ibm.box.com/s/5hnqi0d0h8h60mexbl84bza4hk7qhaec
 
 
