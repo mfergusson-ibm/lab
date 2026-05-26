@@ -1,4 +1,4 @@
-# lab
+# Lab
 
 Simulated network (Lab01) that is based on Netlab and Containerlab for running in a home lab and providing a SevOne discoverable network that can be spun up in minutes. Requires reletively low cpu and memory. 7 routers are started and 1 linux hosts.
 
