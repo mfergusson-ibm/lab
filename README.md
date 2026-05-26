@@ -142,14 +142,16 @@ links:
 
 ens160 must be the interface of the Ubuntu server whose network is same as the SevOne subnet.
 
-4. Start Lab
+## Start Lab & Test
 
+1. netlab up
+   
 ```
 netlab up
 
 ```
 
-5. Test within Netlab
+2. Test within Netlab
    -I is the source interface and loopback 0 in this case.
 
 netlab connect r5
@@ -165,8 +167,8 @@ PING 10.0.0.1 (10.0.0.1) from 10.0.0.5: 56 data bytes
 64 bytes from 10.0.0.1: seq=1 ttl=62 time=0.232 ms
 
 
-6. Configure SevOne
-Use nmtui from outside SevOne container to set custom static route
+## Configure SevOne
+1. Use nmtui from outside SevOne container to set custom static route
 
 Destination/Prefix
 10.0.0.8
@@ -174,19 +176,19 @@ Destination/Prefix
 Nexthop
 10.10.10.99 <- Change to ip as set in step 3.
 
-exit and restart NetworkManager
+2. exit and restart NetworkManager
 
 ```
 systemctl restart NetworkManager
 
 ```
-ping r5
+3. ping r5
 
 ```
 ping 10.0.0.5
 
 ```
-ping h1
+4. ping h1
 
 ```
 ping 10.0.0.8
@@ -206,7 +208,7 @@ snmpwalk -v2c -c SevOne 10.0.0.8 sysDescr
 RFC1213-MIB::sysDescr.0 = STRING: "Linux h1 6.8.0-117-generic #117-Ubuntu SMP PREEMPT_DYNAMIC Tue May  5 19:26:24 UTC 2026 x86_64"
 
 
-6. Stop Lab
+## Stop Lab
 
 ```
 netlab down --cleanup
