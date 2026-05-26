@@ -178,22 +178,24 @@ exit and restart NetworkManager
 
 ```
 systemctl restart NetworkManager
-```
 
+```
 ping r5
 
+```
 ping 10.0.0.5
 
+```
 ping h1
 
+```
 ping 10.0.0.8
 
-```
 nms
 
 snmpwalk -v2c -c SevOne 10.0.0.1 sysDescr
-```
 
+```
 RFC1213-MIB::sysDescr.0 = STRING: "Linux r1 6.8.0-117-generic #117-Ubuntu SMP PREEMPT_DYNAMIC Tue May  5 19:26:24 UTC 2026 x86_64"
 
 ```
@@ -212,6 +214,4 @@ netlab down --cleanup
 ```
 
 (use this if any issues encounterd with the above)
-
-
 
