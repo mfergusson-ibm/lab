@@ -195,7 +195,11 @@ snmpwalk -v2c -c SevOne 10.0.0.8 sysDescr
 RFC1213-MIB::sysDescr.0 = STRING: "Linux h1 6.8.0-117-generic #117-Ubuntu SMP PREEMPT_DYNAMIC Tue May  5 19:26:24 UTC 2026 x86_64"
 
 
+6. Stop Lab
 
+netlab down --cleanup
+
+(use this if any issues encounterd with the above)
 
 
 
