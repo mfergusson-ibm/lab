@@ -1,16 +1,21 @@
 # lab
 
-1. This is a simulated network that is based on Netlab and Containerlab.
-2. The instructions and config are for an Ubuntu standalone or VM server.
-3. The router images are available via the Box link below. Note the license restrictions.
-4. It is intended for home lab use.
-5. The external network used is 10.10.10.0/24 and can be changed.
+Simulated network (Lab01) that is based on Netlab and Containerlab for running in a home lab and providing a SevOne discoverable network that can be spun up in minutes. Requires reletively low cpu and memory.
+
+
+1. The instructions and config are for an Ubuntu standalone or VM server.
+2. Lab01 is based on FRRouting (FRR) is a free and open source Internet routing protocol suite for Linux and Unix platforms.
+3. FRR implements BGP, OSPF, RIP, IS-IS, PIM, LDP, BFD, Babel, PBR, OpenFabric and VRRP, with alpha support for EIGRP and NHRP. There are known issues with BGP and SNMP so BGP objects not created at present.
+4. It is intended for lab use.
+5. The external network used is 10.10.10.0/24 and MUST be changed to the LAN network Ubuntu is running on (covered below).
 6. Once up and running external hosts such as SevOne can poll the devices.
 7. Devices can be reached via a management vrf using for example $ netlab connect r1, allowing full use of cli commands and customization of the running config (not persisent via restart).
-8. Lab is configured with OSPF, BGP, IPFIX, IPSLA, QoS and SNMP.
+8. Lab01 is configured with OSPF and BGP as per diagram below.
+9. h1 is a Linux host that also has snmp enabled and can be discoveed.
+10. The Ubuntu this was tested on is using the ubuntu-24.04.4-live-server-amd64.iso to deploy as a VM.
    
 
-`Toplogy`
+`Network Toplogy`
 
 ```
                                 
@@ -39,7 +44,7 @@
 1. Install Ubuntu
     
    - For VMware "Expose hardware-assisted virtualization to the guest OS"
-   - Test on "Ubuntu 24.04.4 LTS (GNU/Linux 6.8.0-117-generic x86_64)"
+   - Tested on "ubuntu-24.04.4-live-server-amd64.iso". There are known issues with later versions, so suggest this for initial deployment.
 
 2. Seup Environment
    
@@ -109,36 +114,7 @@ mkdir ~/labs
 
 ```
 
-2. Clone srl-labs/vrnetlab
-
-```
-cd ~/labs && git clone https://github.com/srl-labs/vrnetlab
-
-```
-
-3. Copy CML images
-
-Download from box link below and copy to containerlab 
-
-```
-cp cisco_iol-17.16.01a.bin ~/labs/vrnetlab/cisco/iol
-
-```
-
-4. Create Cisco IOL docker images
-
-```
-cd ~/labs/vrnetlab/cisco/iol
-
-make docker-image
-
-docker images
-
-```
-vrnetlab/cisco_iol:17.16.01a
-
-
-5. Copy lab files
+2. Copy lab files
 
 
 
