@@ -156,8 +156,11 @@ Connecting to container clab-lab011-r5, starting bash
 Use vtysh to connect to FRR daemon
 
 r5(bash)# ping -I 10.0.0.5 10.0.0.1
+
 PING 10.0.0.1 (10.0.0.1) from 10.0.0.5: 56 data bytes
+
 64 bytes from 10.0.0.1: seq=0 ttl=62 time=0.368 ms
+
 64 bytes from 10.0.0.1: seq=1 ttl=62 time=0.232 ms
 
 
