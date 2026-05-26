@@ -75,6 +75,7 @@ netlab install ubuntu containerlab libvirt ansible
 ```
 answer (y)es to questions
 
+
 6. Validate Docker
 
 ```
