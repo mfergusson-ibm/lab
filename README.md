@@ -6,7 +6,7 @@ Simulated network (Lab01) that is based on Netlab and Containerlab for running i
 1. The instructions and config are for an Ubuntu standalone or VM server.
 2. Lab01 is based on FRRouting (FRR) is a free and open source Internet routing protocol suite for Linux and Unix platforms.
 3. FRR implements BGP, OSPF, RIP, IS-IS, PIM, LDP, BFD, Babel, PBR, OpenFabric and VRRP, with alpha support for EIGRP and NHRP. There are known issues with BGP and SNMP so BGP objects not created at present.
-4. It is intended for lab use.
+4. It is intended for lab, testing or training use.
 5. The external network used is 10.10.10.0/24 and MUST be changed to the LAN network Ubuntu is running on (covered below).
 6. Once up and running external hosts such as SevOne can poll the devices.
 7. Devices can be reached via a management vrf using for example $ netlab connect r1, allowing full use of cli commands and customization of the running config (not persisent via restart).
