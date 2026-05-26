@@ -37,7 +37,7 @@ Simulated network (Lab01) that is based on Netlab and Containerlab for running i
                                                     (via ens160)
 ```
 
-# Install
+## Install
 
 
 
@@ -90,7 +90,7 @@ newgroup docker
 
 ```
 
-# Test
+## Test
 Note that libvirt is Not used in lab below.
 This will download a bento/ubuntu image and can take time to do
 provided here for completeness 
@@ -105,7 +105,7 @@ netlab test clab
 SUCCESS clab is installed and working correctly
 
 
-# Lab Setup
+## Lab Setup
 
 1. Clone or download directory from Github. Change to desired directory. For purposes here assumed to be user home directory.
 
