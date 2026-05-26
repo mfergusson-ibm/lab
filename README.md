@@ -164,7 +164,35 @@ PING 10.0.0.1 (10.0.0.1) from 10.0.0.5: 56 data bytes
 64 bytes from 10.0.0.1: seq=1 ttl=62 time=0.232 ms
 
 
-6. Test from SevOne
+6. Configure SevOne
+Use nmtui from outside SevOne container to set custom static route
+
+Destination/Prefix
+10.0.0.8
+
+Nexthop
+10.10.10.99 <- Change to ip as set in step 3.
+
+exit and restart NetworkManager
+
+systemctl restart NetworkManager
+
+ping r5
+
+ping 10.0.0.5
+
+ping h1
+
+ping 10.0.0.8
+
+nms
+
+snmpwalk -v2c -c SevOne 10.0.0.1 sysDescr
+RFC1213-MIB::sysDescr.0 = STRING: "Linux r1 6.8.0-117-generic #117-Ubuntu SMP PREEMPT_DYNAMIC Tue May  5 19:26:24 UTC 2026 x86_64"
+
+snmpwalk -v2c -c SevOne 10.0.0.8 sysDescr
+RFC1213-MIB::sysDescr.0 = STRING: "Linux h1 6.8.0-117-generic #117-Ubuntu SMP PREEMPT_DYNAMIC Tue May  5 19:26:24 UTC 2026 x86_64"
+
 
 
 
