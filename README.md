@@ -3,7 +3,7 @@
 Simulated network (Lab01) that is based on Netlab and Containerlab for running in a home lab and providing a SevOne discoverable network that can be spun up in minutes. Requires reletively low cpu and memory. 7 routers are started and 1 linux host.
 
 
-1. The instructions and config are for an Ubuntu standalone or VM server.
+1. The instructions and config are for an Ubuntu standalone or VM server (other optionsr are supported, but below is what this is based on and tested with).
 2. Lab01 is based on FRRouting (FRR) is a free and open source Internet routing protocol suite for Linux and Unix platforms.
 3. FRR implements BGP, OSPF, RIP, IS-IS, PIM, LDP, BFD, Babel, PBR, OpenFabric and VRRP, with alpha support for EIGRP and NHRP. There are known issues with BGP and SNMP so BGP objects not created at present.
 4. It is intended for lab, testing or training use.
