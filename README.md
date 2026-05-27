@@ -222,8 +222,11 @@ Netlab: <https://netlab.tools/>
 Containerlab: <https://containerlab.dev>  
 FRRouting Project: <https://frrouting.org>  
 
+## Credits
+Ivan Pepelnjak from ipspace.net for providing Netlab and inspring me to put something together: <https://blog.ipspace.net/tag/netlab>
 
-## Next Plans
+
+## Next Steps
 - Create lab using Vyos that is more extensible (e.g. Flow support).
 
 ---
