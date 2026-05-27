@@ -230,7 +230,7 @@ Ivan Pepelnjak from ipspace.net for providing Netlab and inspring me to put some
 
 
 ## Next Steps
-- Create lab using Vyos that is more extensible (e.g. Flow support).
+- Create lab using Vyos that is more extensible (e.g. Flow support), and is based on FRR for routing engine.
 
 ---
 
