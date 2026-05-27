@@ -218,4 +218,6 @@ netlab down --cleanup
 (use this if any issues encounterd with the above)
 
 ## References
-<https://netlab.tools/>
+Netlab: <https://netlab.tools/>
+Containerlab: <https://containerlab.dev>
+FRRouting Project: <https://frrouting.org>
