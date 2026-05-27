@@ -221,3 +221,5 @@ netlab down --cleanup
 Netlab: <https://netlab.tools/>  
 Containerlab: <https://containerlab.dev>  
 FRRouting Project: <https://frrouting.org>  
+
+This has been a hobby project in my own time. If you find this useful, buy me a coffeee, or better yet, Blue Points are appreciated ;)
