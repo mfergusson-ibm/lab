@@ -12,7 +12,7 @@ Simulated network (Lab01) that is based on Netlab and Containerlab for running i
 7. Devices can be reached via a management vrf using for example $ netlab connect r1, allowing full use of cli commands and customization of the running config (not persisent via restart).
 8. Lab01 is configured with OSPF and BGP as per diagram below.
 9. h1 is a Linux host that also has snmp enabled and can be discoveed.
-10. The Ubuntu this was tested on is using the ubuntu-24.04.4-live-server-amd64.iso to deploy as a VM.
+10. The Ubuntu this was tested on is using the ubuntu-24.04.4-live-server-amd64.iso to deploy as a VM. See resources below to download from Box.
    
 
 `Network Toplogy`
@@ -221,6 +221,9 @@ netlab down --cleanup
 Netlab: <https://netlab.tools/>  
 Containerlab: <https://containerlab.dev>  
 FRRouting Project: <https://frrouting.org>  
+
+## Resources
+Ubuntu iso from Box: <https://ibm.box.com/s/rz7e8g1rrig58enj6sfs30pm5sj14jyd>
 
 ## Credits
 Ivan Pepelnjak from ipspace.net for providing Netlab and inspring me to put something together: <https://blog.ipspace.net/tag/netlab>
