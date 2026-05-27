@@ -1,5 +1,7 @@
 # Last Updated: 25/05/26, mark.fergusson@ibm.com
 # Change references to 10.10.10.0 as required
+# Note that although Netlab encorages "common blocks", FRR and SNMP is so finicky I've done on a per router basis.
+# Getting this to work in the first instance was through lots of trial and error.
 #
 provider: clab
 defaults.device: frr
