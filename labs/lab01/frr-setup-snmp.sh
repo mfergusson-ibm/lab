@@ -1,4 +1,7 @@
 #!/bin/sh
+# Note there are currently known issues with snmp/bgp that either crashes routing process or doesn't work
+# It therefore should not be added below.
+#
 # 1. Setup Master Config with the correct order
 mkdir -p /etc/snmp
 cat <<EOF > /etc/snmp/snmpd.conf
@@ -12,7 +15,6 @@ EOF
 # 2. Update FRR daemons safely
 sed 's/zebra_options="/zebra_options="-M snmp /' /etc/frr/daemons | \
 sed 's/ospfd_options="/ospfd_options="-M snmp /' > /tmp/daemons.new
-sed -i 's/bgpd_options="/bgpd_options="-M snmp /' >> /tmp/daemons.new
 echo "export SNMP_MASTER_SPEC=tcp:localhost:705" >> /tmp/daemons.new
 cat /tmp/daemons.new > /etc/frr/daemons
 
@@ -24,6 +26,5 @@ cat /tmp/daemons.new > /etc/frr/daemons
  export SNMP_MASTER_SPEC=tcp:localhost:705; 
  /usr/lib/frr/zebra -d -M snmp; 
  /usr/lib/frr/ospfd -d -M snmp;
- /usr/lib/frr/bgpd -d -M snmp;
  ) &
 

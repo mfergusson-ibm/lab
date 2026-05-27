@@ -26,7 +26,7 @@ cat > /etc/snmp/snmpd.conf << 'EOF'
 # SNMP Configuration - Community: SevOne (read-only)
 # Note: No agentaddress directive - port binding handled externally
 rocommunity SevOne default
-sysLocation h1
+sysLocation Lab 
 sysContact Network Admin
 EOF
 
