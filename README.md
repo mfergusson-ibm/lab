@@ -89,6 +89,7 @@ sudo usermod -aG docker,clab_admins $USER
 newgroup docker
 
 ```
+(newgrp docker is used to refresh your group memberships in the current terminal session without having to log out and back in - any issues that that re-login and check)
 
 ## Test
 Note that libvirt is Not used in lab below.
