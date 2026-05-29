@@ -141,7 +141,7 @@ links:
     clab:
       uplink: ens160
 
-ens160 must be the interface of the Ubuntu server whose network is same as the SevOne subnet.
+ens160 must be the interface of the Ubuntu server whose network is same as the SevOne subnet. Change this if required according to your congig as per "ip a".
 
 ## Start Lab & Test
 
