@@ -38,7 +38,36 @@ netlab up
 
 (Note that as r6 is a much larger image it may timeout. Might need to do a netlab down --cleanup then netlab up)
 
-9. Test from SevOne
+9. ssh via netlab
+
+```
+netlab connect r6
+
+```
+
+10. Check config e.g.
+
+```
+sh ver
+
+```
+(some output ommited below for brevity)
+
+netlab connect r6
+Connecting to 192.168.200.106 using SSH port 22
+
+r6#sh ver
+Arista cEOSLab
+Hardware version:
+
+Software image version: 4.36.0F-47083774.4360F (engineering build)
+Architecture: i686
+Internal build version: 4.36.0F-47083774.4360F
+Internal build ID: d8342270-6d5c-4f8a-b816-f519b40c3644
+
+Kernel version: 6.8.0-117-generic
+
+11. Test from SevOne
 
 ```
 snmpwalk -v2c -c SevOne 10.0.0.6 sysDescr
