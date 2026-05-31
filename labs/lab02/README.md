@@ -60,7 +60,9 @@ netlab connect r6
 Connecting to 192.168.200.106 using SSH port 22
 
 r6#sh ver
+
 Arista cEOSLab
+
 Hardware version:
 
 Software image version: 4.36.0F-47083774.4360F (engineering build)
