@@ -18,7 +18,7 @@ docker image import cEOS-lab-4.36.0F.tar ceos:4.36.0F
 
 ```
 
-Note that it is a large image and can a good few minutes to import (5-10 cdmin)
+Note that it is a large image and can take a good few minutes to import (5-10 min)
 
 7. Verify image
 
@@ -26,6 +26,9 @@ Note that it is a large image and can a good few minutes to import (5-10 cdmin)
 docker images | grep ceos
 
 ```
+e.g.
+docker images | grep ceos
+ceos:4.36.0F                            7b7556ca121d        3.2GB          823MB   U
 
 8. Start Lab
 
