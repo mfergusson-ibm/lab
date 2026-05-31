@@ -38,3 +38,11 @@ netlab up
 
 (Note that as r6 is a much larger image it may timeout. Might need to do a netlab down --cleanup then netlab up)
 
+9. Test from SevOne
+
+```
+snmpwalk -v2c -c SevOne 10.0.0.6 sysDescr
+SNMPv2-MIB::sysDescr.0 = STRING: Arista Networks EOS version 4.36.0F-47083774.4360F (engineering build) running on an Arista cEOSLab
+
+```
+
