@@ -66,8 +66,11 @@ Arista cEOSLab
 Hardware version:
 
 Software image version: 4.36.0F-47083774.4360F (engineering build)
+
 Architecture: i686
+
 Internal build version: 4.36.0F-47083774.4360F
+
 Internal build ID: d8342270-6d5c-4f8a-b816-f519b40c3644
 
 Kernel version: 6.8.0-117-generic
