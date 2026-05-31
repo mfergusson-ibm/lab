@@ -29,7 +29,7 @@ docker images | grep ceos
 e.g.
 docker images | grep ceos
 
-ceos:4.36.0F     3.2GB   
+ceos:4.36.0F  ...  3.2GB   
 
 8. Start Lab
 
